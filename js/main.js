@@ -3,6 +3,15 @@ alert("Olá Mundo!")
 // 'use strict' é usado para que o navegador seja mais rígido, estritivo com seu código! Para que você siga os padrões atuais!
 'use strict'
 
+let $range = document.getElementById('peso'),
+    $value = document.getElementById('descricao');
+
+function valorRange(){
+    $value.textContent = $range.value;
+}
+
+$range.addEventListener('click', valorRange)
+
 function camposValidos(){
     return document.getElementById('formulario').reportValidity()
 }
