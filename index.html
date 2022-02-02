@@ -7,7 +7,9 @@
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/input-text.css" />
         <link rel="stylesheet" href="./css/button.css" />
-        <script src="./js/main.js" defer></script>
+        <link rel="stylesheet" href="./css/inputRange.css" />
+        <!-- type="module" para que ele possa saber trabalhar com vários arquivos, fazer imports e exports -->
+        <script src="./js/main.js" defer type="module"></script>
     </head>
     <body>
         <main>
@@ -18,15 +20,16 @@
                         <label>Nome:</label>
                         <input type="text" id="nome" required/>
                     </div>
-                    <div class="input">
-                        <label>Altura:</label>
+                    <div class="range">
+                        <label>Altura</label>
                         <!--step="any" para permitir que possa ser digitado qualquer número, inclusive decimais! Salto pode ser de qualquer maneira!--> 
-                        <input type="number" id="altura" required step="any" min="0" max="3.0"/>
+                        <span id="valor-altura" data-unidade="m">0</span>
+                        <input type="range" id="altura" required step="0.01" min="0" max="3" value="0"/>
                     </div>
-                    <div class="input">
-                        <label>Peso:</label>
-                        <input type="range" id="peso" required min="0" max="200" step="1" value="0"/>
-                        <span id="descricao">50</span>
+                    <div class="range">
+                        <label>Peso</label>
+                        <span id="valor-peso" data-unidade="Kg">0</span>
+                        <input type="range" id="peso" required min="0" max="200" step="0.1" value="0"/>
                     </div>
                 </form>
                 <button id="calcular" class="button template">Calcular</button>
